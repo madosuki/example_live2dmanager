@@ -19,8 +19,8 @@ Live2D models to display are also not included in this repository. For example,
 to run with the default settings, place the model files as follows:
 
 ```text
-public/models/Mao/Mao.model3.json
-public/models/Mao/...
+public/live2d_assets/Mao/Mao.model3.json
+public/live2d_assets/Mao/...
 ```
 
 If the model name or directory is different, you can change it from the input

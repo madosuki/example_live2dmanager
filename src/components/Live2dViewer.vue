@@ -204,8 +204,6 @@ const playMotion = async (fileName: string) => {
     return
   }
   
-  console.log(`motion filename: ${fileName}`);
-
   const groupAndIndex = currentModel.getMotionGroupAndIndex(fileName)
   if (groupAndIndex == null) {
     return
