@@ -29,6 +29,7 @@ const modelJsonFileName = ref('Mao.model3.json')
 const preloadMotions = ref(false)
 const motionFiles = ref<string[]>([])
 const expressionIds = ref<string[]>([])
+const modelReady = ref(false)
 
 let viewer: Live2dViewer | null = null
 let manager: Live2dManager | null = null
@@ -36,7 +37,7 @@ let currentModel: Live2dModel | null = null
 let animationFrameId = 0
 
 const isBusy = computed(() => status.value === 'loading')
-const canUseModel = computed(() => status.value === 'ready' && currentModel?.isCompleteSetup)
+const canUseModel = computed(() => status.value === 'ready' && modelReady.value)
 
 const readLive2dAsset = async (filePath: string): Promise<ArrayBuffer> => {
   const response = await fetch(filePath, { cache: 'no-store' })
@@ -122,6 +123,8 @@ const drawFrame = () => {
   const cubismModel = drawableModel.getModel()
 
   if (currentModel.isCompleteSetup && cubismModel != null) {
+    modelReady.value = true
+
     if (cubismModel.getCanvasWidth() > 1.0 && width < height) {
       drawableModel.getModelMatrix().setWidth(2.0)
       projection.scale(1.0, width / height)
@@ -141,6 +144,7 @@ const drawFrame = () => {
 const releaseLive2d = () => {
   stopLoop()
   currentModel = null
+  modelReady.value = false
   motionFiles.value = []
   expressionIds.value = []
 
@@ -184,6 +188,7 @@ const loadModel = async () => {
 
     motionFiles.value = currentModel.getMotionFileNameList()
     expressionIds.value = currentModel.getExpressionIdList()
+    modelReady.value = currentModel.isCompleteSetup
     status.value = 'ready'
     message.value = `${modelHomeDir}${modelJsonFileName.value} を読み込みました。`
     drawFrame()
@@ -198,6 +203,8 @@ const playMotion = async (fileName: string) => {
   if (currentModel == null) {
     return
   }
+  
+  console.log(`motion filename: ${fileName}`);
 
   const groupAndIndex = currentModel.getMotionGroupAndIndex(fileName)
   if (groupAndIndex == null) {
