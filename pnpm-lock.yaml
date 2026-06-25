@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      live2dmanager:
+        specifier: github:madosuki/live2dManager
+        version: https://codeload.github.com/madosuki/live2dManager/tar.gz/b6c32e83170def9289a113c62f3c611b5ecff4ee
       vue:
         specifier: ^3.5.38
         version: 3.5.38(typescript@6.0.3)
@@ -21,9 +24,6 @@ importers:
       '@vue/tsconfig':
         specifier: ^0.9.1
         version: 0.9.1(typescript@6.0.3)(vue@3.5.38(typescript@6.0.3))
-      live2dmanager:
-        specifier: github:madosuki/live2dManager
-        version: https://codeload.github.com/madosuki/live2dManager/tar.gz/b6c32e83170def9289a113c62f3c611b5ecff4ee
       typescript:
         specifier: ~6.0.2
         version: 6.0.3
