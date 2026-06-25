@@ -33,6 +33,10 @@ pnpm install
 pnpm dev
 ```
 
+During `pnpm install`, the GitHub dependency `live2dmanager` runs its
+`prepare` script to resolve the dependencies it needs before this sample is
+used.
+
 ## Build
 
 ```sh
