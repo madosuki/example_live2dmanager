@@ -35,7 +35,7 @@ pnpm dev
 
 During `pnpm install`, the GitHub dependency `live2dmanager` runs its
 `prepare` script to resolve the dependencies it needs before this sample is
-used. ref: (https://github.com/madosuki/live2dManager/blob/main/package.json#L19)[https://github.com/madosuki/live2dManager/blob/main/package.json#L19]
+used. ref: https://github.com/madosuki/live2dManager/blob/main/package.json#L19
 
 ## Build
 
