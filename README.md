@@ -1,27 +1,30 @@
 # example_live2dmanager
 
-Vue 3 SFC + Vite + TypeScriptで実装した
-[madosuki/live2dManager](https://github.com/madosuki/live2dManager) のサンプルです。
+This is a sample implementation of
+[madosuki/live2dManager](https://github.com/madosuki/live2dManager)
+built with Vue 3 SFC + Vite + TypeScript.
 
 
 ## Required Files
 
-Live2D Cubism Coreはプロプライエタリのため、このリポジトリには含めていません。
-Live2D公式サイトからCubism SDK for Webを取得し、Coreファイルを次の場所に置いてください。
+Live2D Cubism Core is proprietary, so it is not included in this repository.
+Download Cubism SDK for Web from the official Live2D website, then place the
+Core file at the following path:
 
 ```text
 public/live2dcubismcore.min.js
 ```
 
-表示するLive2Dモデルも同じくこのリポジトリには含めていません。たとえばデフォルト設定で
-起動する場合は、次のように配置します。
+Live2D models to display are also not included in this repository. For example,
+to run with the default settings, place the model files as follows:
 
 ```text
 public/models/Mao/Mao.model3.json
 public/models/Mao/...
 ```
 
-モデル名やディレクトリが異なる場合は、画面右側の入力欄で変更できます。
+If the model name or directory is different, you can change it from the input
+fields on the right side of the screen.
 
 ## Development
 
@@ -38,4 +41,5 @@ pnpm build
 
 ## Notes
 
-- モーションと表情は、モデル読み込み後に`Live2dModel`から一覧を取得してボタン化しています。
+- Motions and expressions are retrieved from `Live2dModel` after the model is
+  loaded, then rendered as buttons.
