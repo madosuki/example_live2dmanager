@@ -1,2 +1,3 @@
 allowBuilds:
   live2dmanager: true
+  live2dmanager@https://codeload.github.com/madosuki/live2dManager/tar.gz/63a20f834e5cbad9dd159acd7243bd42e48eb650: true
