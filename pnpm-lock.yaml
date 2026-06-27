@@ -10,7 +10,7 @@ importers:
     dependencies:
       live2dmanager:
         specifier: github:madosuki/live2dManager
-        version: https://codeload.github.com/madosuki/live2dManager/tar.gz/63a20f834e5cbad9dd159acd7243bd42e48eb650
+        version: https://codeload.github.com/madosuki/live2dManager/tar.gz/94918cd45ca1fea08cc030f1e94526a897691512
       vue:
         specifier: ^3.5.38
         version: 3.5.38(typescript@6.0.3)
@@ -342,8 +342,8 @@ packages:
     resolution: {integrity: sha512-NXYBzinNrblfraPGyrbPoD19C1h9lfI/1mzgWYvXUTe414Gz/X1FD2XBZSZM7rRTrMA8JL3OtAaGifrIKhQ5yQ==}
     engines: {node: '>= 12.0.0'}
 
-  live2dmanager@https://codeload.github.com/madosuki/live2dManager/tar.gz/63a20f834e5cbad9dd159acd7243bd42e48eb650:
-    resolution: {gitHosted: true, integrity: sha512-Hn18pzooFohYbSZVJ5Muc1DsEDZHtGafv4DPVPJ/qPycR0J6R2vFXM91zFjQD/uwKYeynxUIfVc13gHf2N6ufw==, tarball: https://codeload.github.com/madosuki/live2dManager/tar.gz/63a20f834e5cbad9dd159acd7243bd42e48eb650}
+  live2dmanager@https://codeload.github.com/madosuki/live2dManager/tar.gz/94918cd45ca1fea08cc030f1e94526a897691512:
+    resolution: {gitHosted: true, integrity: sha512-l6XzDW/JWwg5MC9obH1ZTBlgwiaDiFoxk7Vqxb2d4F38h0j6/zwNRR6gGXFO5vi/PYt9mG1Ny2hABMH0wjA0lA==, tarball: https://codeload.github.com/madosuki/live2dManager/tar.gz/94918cd45ca1fea08cc030f1e94526a897691512}
     version: 1.0.0
 
   magic-string@0.30.21:
@@ -710,7 +710,7 @@ snapshots:
       lightningcss-win32-arm64-msvc: 1.32.0
       lightningcss-win32-x64-msvc: 1.32.0
 
-  live2dmanager@https://codeload.github.com/madosuki/live2dManager/tar.gz/63a20f834e5cbad9dd159acd7243bd42e48eb650: {}
+  live2dmanager@https://codeload.github.com/madosuki/live2dManager/tar.gz/94918cd45ca1fea08cc030f1e94526a897691512: {}
 
   magic-string@0.30.21:
     dependencies:

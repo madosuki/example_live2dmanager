@@ -3,16 +3,6 @@ import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import { Live2dManager, Live2dModel, Live2dViewer } from 'live2dmanager'
 
 type ViewerStatus = 'idle' | 'loading' | 'ready' | 'error'
-type CubismRuntimeModel = {
-  getCanvasWidth: () => number
-}
-type CubismRuntimeModelMatrix = {
-  setWidth: (width: number) => void
-}
-type DrawableLive2dModel = Live2dModel & {
-  getModel: () => CubismRuntimeModel | null
-  getModelMatrix: () => CubismRuntimeModelMatrix
-}
 
 declare global {
   interface Window {
@@ -119,14 +109,13 @@ const drawFrame = () => {
   const { width, height } = viewer.canvas
   const projection = viewer.getNewMatrix44()
 
-  const drawableModel = currentModel as DrawableLive2dModel
-  const cubismModel = drawableModel.getModel()
+  const cubismModel = currentModel.getModel();
 
   if (currentModel.isCompleteSetup && cubismModel != null) {
     modelReady.value = true
 
     if (cubismModel.getCanvasWidth() > 1.0 && width < height) {
-      drawableModel.getModelMatrix().setWidth(2.0)
+      cubismModel.getModelMatrix().setWidth(2.0)
       projection.scale(1.0, width / height)
     } else {
       projection.scale(height / width, 1.0)
